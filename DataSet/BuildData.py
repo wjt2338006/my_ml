@@ -19,7 +19,7 @@ def getRedWine(path = "./DataSet/winequality-red.csv"):
             j = 0
             i = i[0].split(";")
             while j < len(keys):
-                single[keys[j]] = i[j]
+                single[keys[j]] = float(i[j])
                 j += 1
 
             returnData[str(count)] = single

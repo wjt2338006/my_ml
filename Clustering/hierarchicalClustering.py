@@ -1,4 +1,5 @@
 from DataSet.BuildData import getRedWine
+from DataSet.myDataSet import regularData
 from DistanceEvaluation import pearsonCorrelationScore
 
 def printTree(node,prefix="|"):
@@ -40,7 +41,7 @@ class DistanceManage:
             #print(i.data)
             #print(j.data)
             result = 1.0 - pearsonCorrelationScore(i.data, j.data)
-            if result <= 0.0: result = 0.0
+
             #print(result)
 
             self.distanceCollection[(i.id,j.id)] = result
@@ -74,6 +75,7 @@ def hierarchicalClustering(dataSet):
         closestPair = (cluster[0],cluster[1])
         closestDisitance = distance.getDistance(closestPair[0], closestPair[1])
 
+        #遍历每一项，寻找最小距离
         for i in cluster:
             for j in cluster:
                 if i == j:
@@ -108,7 +110,7 @@ def hierarchicalClustering(dataSet):
     return cluster[0]
 # 测试函数
 if __name__ == "__main__":
-    dataSet = getRedWine("../DataSet/winequality-red.csv")
-    print(dataSet)
+    #dataSet = getRedWine("../DataSet/winequality-red.csv")
+    dataSet = regularData()
     #hierarchicalClustering(dataSet)
     printTree(hierarchicalClustering(dataSet))
