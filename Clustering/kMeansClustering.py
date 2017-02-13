@@ -4,7 +4,6 @@ from DataSet.BuildData import getRedWine
 from DataSet.myDataSet import dataMake, regularData
 from DistanceEvaluation import pearsonCorrelationScore
 
-
 def average(dataList):
     # 应该传入一个列表，中有每一个数据项，数据项是key:value的字典
     # 算法计算相同key值得均值，如果数据不是整齐的，那么突出的项值会非常的小
@@ -18,7 +17,6 @@ def average(dataList):
     for key, value in returnData.items():
         returnData[key] = returnData[key] / float(len(dataList))
     return returnData
-
 
 def kcluster(dataSet, k):
     # 确定每一种特性的最大和最小值

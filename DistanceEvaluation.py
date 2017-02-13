@@ -1,7 +1,5 @@
 from math import sqrt
-
 from DataSet.BuildData import getRedWine
-
 
 def euclideanDistanceScore(obj1 ,obj2):
     """

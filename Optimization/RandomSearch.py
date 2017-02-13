@@ -25,6 +25,8 @@ def randomSearch(dataSet):
 
     print("最佳匹配：",bestItem)
     print("每一分品质价格：",bestFS)
+
+#穷举所有的项目，找出最优解
 def correctResult(dataSet):
     colMaxCalTime = [len(i) for i in dataSet]
 
@@ -57,9 +59,11 @@ def correctResult(dataSet):
             bestFS = fee/scope
             bestPro = i
     #print(allList)
-    #print(len(allList))
-    print(bestFS)
+
+    print("穷举法最佳")
+    print(len(allList))
     print(bestPro)
+    print(bestFS)
 
 
 
